@@ -1,15 +1,17 @@
-import { Routes, Route } from "react-router-dom";
-
+// This is the correct App.tsx code
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/layout'; 
+import VisualizationsPage from './components/visualizations';
+import SpeciesPage from './components/species';
+import './App.css';
 
 function App() {
   return (
     <Routes>
-      _{/*
-        <Route path="/" element={<Home />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/DataExplorer" element={<DataExplorer />} />
-        <Route path="/TaxonomyExplorer" element={<TaxonomyExplorer />} />
-        */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<VisualizationsPage />} />
+        <Route path="species-database" element={<SpeciesPage />} />
+      </Route>
     </Routes>
   );
 }
