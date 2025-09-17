@@ -1,7 +1,6 @@
 // src/components/layout.tsx
 import { Outlet, Link } from 'react-router-dom';
 import { Waves, Fish, BarChart3 } from "lucide-react";
-import { Analytics } from "@vercel/analytics/next"
 
 const navItems = [
   { name: "Dashboard", page: "/", icon: BarChart3 },
@@ -12,7 +11,6 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50">
-       <Analytics />
       <nav className="bg-gradient-to-r from-blue-800 via-blue-700 to-cyan-700 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
