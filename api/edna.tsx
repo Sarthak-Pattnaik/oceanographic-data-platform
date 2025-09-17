@@ -7,16 +7,18 @@ const supabase = createClient(
 );
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
+  if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { species_id, sequence_id, sequence } = req.body;
+  const { species_id } = req.query;
 
   const { data, error } = await supabase
     .from('edna_sequences')
-    .insert([{ species_id, sequence_id, sequence }])
-    .select();
+    .select('*')
+    .eq('species_id', species_id)
+    .single();
+    
 
   if (error) return res.status(400).json({ error: error.message });
 
