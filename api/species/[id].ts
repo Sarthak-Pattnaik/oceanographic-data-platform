@@ -20,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { data, error } = await supabase
       .from('taxonomy')
       .select('*')
-      .eq('id', id)
+      .eq('species_id', id)
       .single();
 
     if (error) throw error;
