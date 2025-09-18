@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout'; 
 import VisualizationsPage from './components/visualizations';
 import SpeciesPage from './components/species';
+import Docs from './components/docs';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<VisualizationsPage />} />
         <Route path="species-database" element={<SpeciesPage />} />
+        <Route path="docs" element={<Docs />}/>
       </Route>
     </Routes>
   );

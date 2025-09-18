@@ -1,0 +1,160 @@
+openapi: 3.0.3
+info:
+  title: Oceanographic Data Platform API
+  version: "0.1.0"
+  description: Small prototype API for taxonomy, eDNA and visualization data.
+servers:
+  - url: /api
+paths:
+  /species/{id}:
+    get:
+      summary: Get species details
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Species details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaxonomyDetailResponse"
+        '404':
+          description: Not found
+  /edna/{species_id}:
+    get:
+      summary: Get eDNA sequence details
+      parameters:
+        - name: species_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: eDNA sequence details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdnaSequenceDetailResponse"
+        '404':
+          description: Not found
+  /species_distribution:
+    get:
+      summary: Get species distribution records within a lat/lon range
+      parameters:
+        - name: minLat
+          in: query
+          required: true
+          schema:
+            type: number
+            format: double
+        - name: maxLat
+          in: query
+          required: true
+          schema:
+            type: number
+            format: double
+        - name: minLng
+          in: query
+          required: true
+          schema:
+            type: number
+            format: double
+        - name: maxLng
+          in: query
+          required: true
+          schema:
+            type: number
+            format: double
+      responses:
+        '200':
+          description: List of species distribution records in the given lat/lon range
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SpeciesDistributionDetailResponse"
+        '404':
+          description: No records found
+components:
+  schemas:
+    TaxonomyDetailResponse:
+      type: object
+      properties:
+        species_id:
+          type: string
+          format: uuid
+        scientific_name:
+          type: string
+          nullable: true
+        common_name:
+          type: string
+          nullable: true
+        family:
+          type: string
+          nullable: true
+        genus:
+          type: string
+          nullable: true
+      required:
+        - species_id
+    EdnaSequenceDetailResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        species_id:
+          type: string
+          format: uuid
+          nullable: true
+        sequence_id:
+          type: string
+          nullable: true
+        sequence:
+          type: string
+          nullable: true
+      required:
+        - id
+    SpeciesDistributionDetailResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        species_id:
+          type: string
+          format: uuid
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+        timestamp:
+          type: string
+          format: date-time
+          nullable: true
+        abundance:
+          type: integer
+          nullable: true
+        temperature:
+          type: number
+          format: double
+          nullable: true
+        salinity:
+          type: number
+          format: double
+          nullable: true
+      required:
+        - id
