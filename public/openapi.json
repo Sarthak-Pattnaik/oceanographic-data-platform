@@ -42,13 +42,13 @@
             }
          }
       },
-      "/edna/{species_id}": {
+      "/edna": {
          "get": {
             "summary": "Get eDNA sequence details",
             "parameters": [
                {
                   "name": "species_id",
-                  "in": "path",
+                  "in": "query",
                   "required": true,
                   "schema": {
                      "type": "string",
@@ -73,7 +73,7 @@
             }
          }
       },
-      "/species_distribution": {
+      "/visualizations/trends": {
          "get": {
             "summary": "Get species distribution records within a lat/lon range",
             "parameters": [

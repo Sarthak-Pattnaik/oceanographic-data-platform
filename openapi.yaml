@@ -25,12 +25,12 @@ paths:
                 $ref: "#/components/schemas/TaxonomyDetailResponse"
         '404':
           description: Not found
-  /edna/{species_id}:
+  /edna:
     get:
       summary: Get eDNA sequence details
       parameters:
         - name: species_id
-          in: path
+          in: query   # <-- use "query" instead of "path"
           required: true
           schema:
             type: string
@@ -41,10 +41,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EdnaSequenceDetailResponse"
+               $ref: "#/components/schemas/EdnaSequenceDetailResponse"
         '404':
           description: Not found
-  /species_distribution:
+  /visualizations/trends:
     get:
       summary: Get species distribution records within a lat/lon range
       parameters:

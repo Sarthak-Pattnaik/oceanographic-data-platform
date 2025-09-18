@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ffe45863-4d06-47a3-b078-f9a0d62333c6",
+		"_postman_id": "9ea949f9-c31e-435d-a6f3-12bc08ffbd23",
 		"name": "Oceanographic Data Platform API",
 		"description": "Small prototype API for taxonomy, eDNA and visualization data.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -35,7 +35,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "f042330d-a687-3613-e219-ff9443c58f1e",
+											"value": "ed95fc71-8d44-2619-16bd-1db3657ddea8",
 											"description": "(Required) "
 										}
 									]
@@ -78,7 +78,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"species_id\": \"b8fabf58-54a4-1428-52ea-424fc9aca8ce\",\n  \"scientific_name\": \"string\",\n  \"common_name\": \"string\",\n  \"family\": \"string\",\n  \"genus\": \"string\"\n}"
+									"body": "{\n  \"species_id\": \"cd4d10bb-e23c-3e18-cb06-22a13ca7b275\",\n  \"scientific_name\": \"string\",\n  \"common_name\": \"string\",\n  \"family\": \"string\",\n  \"genus\": \"string\"\n}"
 								},
 								{
 									"name": "Not found",
@@ -118,114 +118,7 @@
 			"name": "edna",
 			"item": [
 				{
-					"name": "{species_id}",
-					"item": [
-						{
-							"name": "Get eDNA sequence details",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/edna/:species_id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"edna",
-										":species_id"
-									],
-									"variable": [
-										{
-											"key": "species_id",
-											"value": "f042330d-a687-3613-e219-ff9443c58f1e",
-											"description": "(Required) "
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "eDNA sequence details",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/edna/:species_id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"edna",
-												":species_id"
-											],
-											"variable": [
-												{
-													"key": "species_id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": \"77dbf819-5c83-762c-9f9a-ebe198c759a0\",\n  \"species_id\": \"29a3cce0-98c0-2b6f-c45c-fa6350e733a1\",\n  \"sequence_id\": \"string\",\n  \"sequence\": \"string\"\n}"
-								},
-								{
-									"name": "Not found",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/edna/:species_id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"edna",
-												":species_id"
-											],
-											"variable": [
-												{
-													"key": "species_id"
-												}
-											]
-										}
-									},
-									"status": "Not Found",
-									"code": 404,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": null
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "species_distribution",
-			"item": [
-				{
-					"name": "Get species distribution records within a lat/lon range",
+					"name": "Get eDNA sequence details",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -235,32 +128,17 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/species_distribution?minLat=8917.011785611312&maxLat=8917.011785611312&minLng=8917.011785611312&maxLng=8917.011785611312",
+							"raw": "{{baseUrl}}/edna?species_id=ed95fc71-8d44-2619-16bd-1db3657ddea8",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"species_distribution"
+								"edna"
 							],
 							"query": [
 								{
-									"key": "minLat",
-									"value": "8917.011785611312",
-									"description": "(Required) "
-								},
-								{
-									"key": "maxLat",
-									"value": "8917.011785611312",
-									"description": "(Required) "
-								},
-								{
-									"key": "minLng",
-									"value": "8917.011785611312",
-									"description": "(Required) "
-								},
-								{
-									"key": "maxLng",
-									"value": "8917.011785611312",
+									"key": "species_id",
+									"value": "ed95fc71-8d44-2619-16bd-1db3657ddea8",
 									"description": "(Required) "
 								}
 							]
@@ -268,7 +146,7 @@
 					},
 					"response": [
 						{
-							"name": "List of species distribution records in the given lat/lon range",
+							"name": "eDNA sequence details",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -278,32 +156,17 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/species_distribution?minLat=8917.011785611312&maxLat=8917.011785611312&minLng=8917.011785611312&maxLng=8917.011785611312",
+									"raw": "{{baseUrl}}/edna?species_id=ed95fc71-8d44-2619-16bd-1db3657ddea8",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"species_distribution"
+										"edna"
 									],
 									"query": [
 										{
-											"key": "minLat",
-											"value": "8917.011785611312",
-											"description": "(Required) "
-										},
-										{
-											"key": "maxLat",
-											"value": "8917.011785611312",
-											"description": "(Required) "
-										},
-										{
-											"key": "minLng",
-											"value": "8917.011785611312",
-											"description": "(Required) "
-										},
-										{
-											"key": "maxLng",
-											"value": "8917.011785611312",
+											"key": "species_id",
+											"value": "ed95fc71-8d44-2619-16bd-1db3657ddea8",
 											"description": "(Required) "
 										}
 									]
@@ -319,40 +182,25 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"id\": \"375b1b3c-2f41-c026-f0d8-b4df61d24588\",\n    \"species_id\": \"b848d220-21b4-ce49-8d7d-58934ec36b1e\",\n    \"latitude\": 8825.044419203363,\n    \"longitude\": 9145.292235162,\n    \"timestamp\": \"2005-07-06T20:47:46.929Z\",\n    \"abundance\": 7658,\n    \"temperature\": 8966.666197727016,\n    \"salinity\": 4298.250539999413\n  },\n  {\n    \"id\": \"4879c3e7-9cf0-f65c-96c6-6a186b88664d\",\n    \"species_id\": \"85d419c0-2c6c-6af9-b4a8-1779e1e16ad5\",\n    \"latitude\": 9824.828775760092,\n    \"longitude\": 7992.5977233363765,\n    \"timestamp\": \"1979-06-15T02:32:09.990Z\",\n    \"abundance\": 6795,\n    \"temperature\": 9138.737803459991,\n    \"salinity\": 3640.1980414401346\n  }\n]"
+							"body": "{\n  \"id\": \"277f6441-2459-87de-ef3b-70176c8eb578\",\n  \"species_id\": \"1ff61cac-3d25-e1ad-2266-958d69be3ceb\",\n  \"sequence_id\": \"string\",\n  \"sequence\": \"string\"\n}"
 						},
 						{
-							"name": "No records found",
+							"name": "Not found",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/species_distribution?minLat=8917.011785611312&maxLat=8917.011785611312&minLng=8917.011785611312&maxLng=8917.011785611312",
+									"raw": "{{baseUrl}}/edna?species_id=ed95fc71-8d44-2619-16bd-1db3657ddea8",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"species_distribution"
+										"edna"
 									],
 									"query": [
 										{
-											"key": "minLat",
-											"value": "8917.011785611312",
-											"description": "(Required) "
-										},
-										{
-											"key": "maxLat",
-											"value": "8917.011785611312",
-											"description": "(Required) "
-										},
-										{
-											"key": "minLng",
-											"value": "8917.011785611312",
-											"description": "(Required) "
-										},
-										{
-											"key": "maxLng",
-											"value": "8917.011785611312",
+											"key": "species_id",
+											"value": "ed95fc71-8d44-2619-16bd-1db3657ddea8",
 											"description": "(Required) "
 										}
 									]
@@ -364,6 +212,162 @@
 							"header": [],
 							"cookie": [],
 							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "visualizations",
+			"item": [
+				{
+					"name": "trends",
+					"item": [
+						{
+							"name": "Get species distribution records within a lat/lon range",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/visualizations/trends?minLat=264.6337574535762&maxLat=264.6337574535762&minLng=264.6337574535762&maxLng=264.6337574535762",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"visualizations",
+										"trends"
+									],
+									"query": [
+										{
+											"key": "minLat",
+											"value": "264.6337574535762",
+											"description": "(Required) "
+										},
+										{
+											"key": "maxLat",
+											"value": "264.6337574535762",
+											"description": "(Required) "
+										},
+										{
+											"key": "minLng",
+											"value": "264.6337574535762",
+											"description": "(Required) "
+										},
+										{
+											"key": "maxLng",
+											"value": "264.6337574535762",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of species distribution records in the given lat/lon range",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/visualizations/trends?minLat=264.6337574535762&maxLat=264.6337574535762&minLng=264.6337574535762&maxLng=264.6337574535762",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"visualizations",
+												"trends"
+											],
+											"query": [
+												{
+													"key": "minLat",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												},
+												{
+													"key": "maxLat",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												},
+												{
+													"key": "minLng",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												},
+												{
+													"key": "maxLng",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"94b3d507-7cad-1f87-8a44-10f459d6bb35\",\n    \"species_id\": \"35dea948-c251-443c-3836-37546a0de2d5\",\n    \"latitude\": 5382.1700333155295,\n    \"longitude\": 5656.285217879317,\n    \"timestamp\": \"1996-01-02T10:13:30.238Z\",\n    \"abundance\": 4704,\n    \"temperature\": 8394.861707223565,\n    \"salinity\": 621.4244633042032\n  },\n  {\n    \"id\": \"823486b9-222e-93d4-20f9-0fd9f2710b65\",\n    \"species_id\": \"0c182aa5-e6ae-287e-8187-55edc2cf00e0\",\n    \"latitude\": 3056.245229465242,\n    \"longitude\": 7886.504974135025,\n    \"timestamp\": \"1987-01-17T23:02:07.842Z\",\n    \"abundance\": 8475,\n    \"temperature\": 2484.8027913447445,\n    \"salinity\": 2007.0883692533337\n  }\n]"
+								},
+								{
+									"name": "No records found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/visualizations/trends?minLat=264.6337574535762&maxLat=264.6337574535762&minLng=264.6337574535762&maxLng=264.6337574535762",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"visualizations",
+												"trends"
+											],
+											"query": [
+												{
+													"key": "minLat",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												},
+												{
+													"key": "maxLat",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												},
+												{
+													"key": "minLng",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												},
+												{
+													"key": "maxLng",
+													"value": "264.6337574535762",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
 						}
 					]
 				}
