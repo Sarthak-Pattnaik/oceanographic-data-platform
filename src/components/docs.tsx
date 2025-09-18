@@ -5,7 +5,7 @@ import "swagger-ui-react/swagger-ui.css";
 const Docs: React.FC = () => {
   return (
     <div style={{ padding: "20px" }}>
-      <h1>API Docs</h1>
+      <h1 className="text-black">API Docs</h1>
       <SwaggerUI url="/openapi.json" />
     </div>
   );
