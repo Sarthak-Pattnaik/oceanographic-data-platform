@@ -1,10 +1,11 @@
 // src/components/layout.tsx
 import { Outlet, Link } from 'react-router-dom';
-import { Waves, Fish, BarChart3 } from "lucide-react";
+import { Waves, Fish, BarChart3, Info } from "lucide-react";
 
 const navItems = [
   { name: "Dashboard", page: "/", icon: BarChart3 },
   { name: "Species Database", page: "/species-database", icon: Fish },
+  { name: "API Docs", page: "/docs", icon: Info },
 ];
 
 const Layout = () => {

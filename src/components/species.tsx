@@ -93,10 +93,10 @@ export default function SpeciesDatabasePage() {
             <table className="min-w-full border border-gray-300">
                 <thead>
                     <tr className="bg-gray-200">
+                        <th className="border px-2 py-1 text-black">Species ID</th>
                         <th className="border px-2 py-1 text-black">Scientific Name</th>
                         <th className="border px-2 py-1 text-black">Common Name</th>
                         <th className="border px-2 py-1 text-black">Family</th>
-                        <th className="border px-2 py-1 text-black">Genus</th>
                         <th className="border px-2 py-1 text-black">Otolith Image</th>
                         <th className="border px-2 py-1 text-black">eDNA Sequences</th>
                     </tr>
@@ -104,10 +104,10 @@ export default function SpeciesDatabasePage() {
                 <tbody>
                     {filteredData.map((entry) => (
                         <tr key={entry.species_id}>
+                            <td className="border px-2 py-1 text-black">{entry.species_id}</td>
                             <td className="border px-2 py-1 text-black">{entry.scientific_name}</td>
                             <td className="border px-2 py-1 text-black">{entry.common_name}</td>
                             <td className="border px-2 py-1 text-black">{entry.family}</td>
-                            <td className="border px-2 py-1 text-black">{entry.genus}</td>
                             <td className="border px-2 py-1">
                                 {entry.otolith_image ? (
                                     <img
